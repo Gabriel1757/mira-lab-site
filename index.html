@@ -1,567 +1,793 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mira__Lab | Soluções em Tecnologia</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-    }
+<title>Mira__Lab | Soluções em Tecnologia</title>
 
-    body{
-      background:#050505;
-      color:white;
-      overflow-x:hidden;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    :root{
-      --pink:#ff00b7;
-      --purple:#7b00ff;
-      --blue:#00cfff;
-      --dark:#0c0c0c;
-      --gray:#141414;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    html{
-      scroll-behavior:smooth;
-    }
+<style>
 
-    /* NAVBAR */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
-    header{
-      width:100%;
-      position:fixed;
-      top:0;
-      left:0;
-      z-index:999;
-      backdrop-filter:blur(10px);
-      background:rgba(0,0,0,.5);
-      border-bottom:1px solid rgba(255,255,255,.05);
-    }
+:root{
+  --pink:#ff00b7;
+  --blue:#00cfff;
+}
 
-    .navbar{
-      width:90%;
-      margin:auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:18px 0;
-    }
+body{
+  background:#050505;
+  color:white;
+  overflow-x:hidden;
+}
 
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    .logo img{
-      width:65px;
-    }
+/* NAVBAR */
 
-    .logo h1{
-      font-size:28px;
-      background:linear-gradient(90deg,var(--pink),var(--blue));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      font-weight:800;
-    }
+header{
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:999;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,.5);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
 
-    .menu{
-      display:flex;
-      gap:25px;
-    }
+.navbar{
+  width:90%;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 0;
+}
 
-    .menu a{
-      color:white;
-      text-decoration:none;
-      transition:.3s;
-      font-weight:500;
-    }
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
-    .menu a:hover{
-      color:var(--blue);
-    }
+.logo img{
+  width:60px;
+}
 
-    .btn{
-      padding:12px 24px;
-      border:none;
-      border-radius:12px;
-      background:linear-gradient(90deg,var(--pink),var(--blue));
-      color:white;
-      font-weight:600;
-      cursor:pointer;
-      transition:.3s;
-      text-decoration:none;
-      display:inline-block;
-    }
+.logo h1{
+  font-size:28px;
+  background:linear-gradient(90deg,var(--pink),var(--blue));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-weight:800;
+}
 
-    .btn:hover{
-      transform:translateY(-3px);
-      box-shadow:0 0 25px rgba(0,207,255,.4);
-    }
+.menu{
+  display:flex;
+  gap:25px;
+}
 
-    /* HERO */
+.menu a{
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
 
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:120px 8%;
-      gap:60px;
-      flex-wrap:wrap;
-      position:relative;
-    }
+.menu a:hover{
+  color:var(--blue);
+}
 
-    .hero::before{
-      content:'';
-      position:absolute;
-      width:500px;
-      height:500px;
-      background:linear-gradient(var(--pink),var(--blue));
-      filter:blur(150px);
-      opacity:.15;
-      border-radius:50%;
-      top:100px;
-      left:-100px;
-    }
+.btn{
+  padding:12px 24px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(90deg,var(--pink),var(--blue));
+  color:white;
+  font-weight:600;
+  text-decoration:none;
+  transition:.3s;
+  display:inline-block;
+}
 
-    .hero-text{
-      flex:1;
-      min-width:300px;
-      z-index:2;
-    }
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 25px rgba(0,207,255,.4);
+}
 
-    .hero-text h2{
-      font-size:62px;
-      line-height:1.1;
-      margin-bottom:20px;
-    }
+/* HERO */
 
-    .hero-text span{
-      background:linear-gradient(90deg,var(--pink),var(--blue));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:140px 8%;
+  gap:60px;
+  flex-wrap:wrap;
+  position:relative;
+}
 
-    .hero-text p{
-      color:#ccc;
-      font-size:18px;
-      margin-bottom:35px;
-      max-width:600px;
-    }
+.hero::before{
+  content:'';
+  position:absolute;
+  width:500px;
+  height:500px;
+  background:linear-gradient(var(--pink),var(--blue));
+  filter:blur(150px);
+  opacity:.15;
+  border-radius:50%;
+  top:50px;
+  left:-100px;
+}
 
-    .hero-image{
-      flex:1;
-      display:flex;
-      justify-content:center;
-      min-width:300px;
-      z-index:2;
-    }
+.hero-text{
+  flex:1;
+  min-width:300px;
+  z-index:2;
+}
 
-    .hero-image img{
-      width:100%;
-      max-width:550px;
-      filter:drop-shadow(0 0 40px rgba(255,0,183,.3));
-    }
+.hero-text h2{
+  font-size:62px;
+  line-height:1.1;
+  margin-bottom:20px;
+}
 
-    /* SERVICES */
+.hero-text span{
+  background:linear-gradient(90deg,var(--pink),var(--blue));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    section{
-      padding:100px 8%;
-    }
+.hero-text p{
+  color:#ccc;
+  font-size:18px;
+  margin-bottom:35px;
+  max-width:600px;
+}
 
-    .title{
-      text-align:center;
-      margin-bottom:60px;
-    }
+.hero-image{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  min-width:300px;
+}
 
-    .title h2{
-      font-size:42px;
-      margin-bottom:10px;
-    }
+.hero-image img{
+  width:100%;
+  max-width:500px;
+  filter:drop-shadow(0 0 40px rgba(255,0,183,.3));
+}
 
-    .title p{
-      color:#aaa;
-    }
+/* SECTION */
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-    }
+section{
+  padding:100px 8%;
+}
 
-    .card{
-      background:linear-gradient(180deg,#121212,#090909);
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:22px;
-      padding:35px;
-      transition:.4s;
-      position:relative;
-      overflow:hidden;
-    }
+.title{
+  text-align:center;
+  margin-bottom:60px;
+}
 
-    .card::before{
-      content:'';
-      position:absolute;
-      width:120px;
-      height:120px;
-      background:linear-gradient(var(--pink),var(--blue));
-      filter:blur(70px);
-      opacity:.2;
-      top:-40px;
-      right:-40px;
-    }
+.title h2{
+  font-size:42px;
+  margin-bottom:10px;
+}
 
-    .card:hover{
-      transform:translateY(-8px);
-      border-color:rgba(0,207,255,.3);
-    }
+.title p{
+  color:#aaa;
+}
 
-    .card h3{
-      margin-bottom:15px;
-      font-size:24px;
-    }
+/* SERVICES */
 
-    .card p{
-      color:#aaa;
-      line-height:1.7;
-    }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
 
-    /* PORTFOLIO */
+.card{
+  background:linear-gradient(180deg,#121212,#090909);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:22px;
+  padding:35px;
+  transition:.4s;
+}
 
-    .portfolio-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:30px;
-    }
+.card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(0,207,255,.3);
+}
 
-    .portfolio-card{
-      background:#111;
-      border-radius:22px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.06);
-      transition:.3s;
-    }
+.card h3{
+  margin-bottom:15px;
+}
 
-    .portfolio-card:hover{
-      transform:translateY(-6px);
-    }
+.card p{
+  color:#aaa;
+  line-height:1.7;
+}
 
-    .portfolio-media{
-      width:100%;
-      height:240px;
-      background:#1d1d1d;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#777;
-      font-size:18px;
-      overflow:hidden;
-    }
+/* PORTFOLIO */
 
-    .portfolio-media img,
-    .portfolio-media video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+}
 
-    .portfolio-content{
-      padding:25px;
-    }
+.portfolio-card{
+  background:#111;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.06);
+  transition:.3s;
+}
 
-    .portfolio-content h3{
-      margin-bottom:10px;
-    }
+.portfolio-card:hover{
+  transform:translateY(-6px);
+}
 
-    .portfolio-content p{
-      color:#aaa;
-      margin-bottom:20px;
-    }
+.portfolio-media{
+  width:100%;
+  height:240px;
+  background:#1d1d1d;
+  overflow:hidden;
+}
 
-    /* CTA */
+.portfolio-media iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
 
-    .cta{
-      text-align:center;
-      background:linear-gradient(135deg,#101010,#060606);
-      border-top:1px solid rgba(255,255,255,.05);
-      border-bottom:1px solid rgba(255,255,255,.05);
-    }
+.portfolio-content{
+  padding:25px;
+}
 
-    .cta h2{
-      font-size:48px;
-      margin-bottom:20px;
-    }
+.portfolio-content h3{
+  margin-bottom:10px;
+}
 
-    .cta p{
-      color:#bbb;
-      margin-bottom:35px;
-    }
+.portfolio-content p{
+  color:#aaa;
+  margin-bottom:20px;
+}
 
-    /* FOOTER */
+/* COMMENTS */
 
-    footer{
-      padding:50px 8%;
-      text-align:center;
-      background:#050505;
-    }
+.comments{
+  background:#080808;
+}
 
-    footer p{
-      color:#888;
-    }
+.comments-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
 
-    /* RESPONSIVO */
+.comment-card{
+  background:linear-gradient(180deg,#121212,#090909);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:22px;
+  padding:30px;
+}
 
-    @media(max-width:900px){
+.stars{
+  color:#ffd000;
+  font-size:20px;
+  margin-bottom:15px;
+}
 
-      .hero-text h2{
-        font-size:42px;
-      }
+.comment-card p{
+  color:#aaa;
+  line-height:1.7;
+  margin-bottom:15px;
+}
 
-      .menu{
-        display:none;
-      }
+/* CTA */
 
-      .hero{
-        text-align:center;
-      }
+.cta{
+  text-align:center;
+  background:linear-gradient(135deg,#101010,#060606);
+}
 
-      .hero-text p{
-        margin:auto auto 35px auto;
-      }
+.cta h2{
+  font-size:48px;
+  margin-bottom:20px;
+}
 
-    }
+.cta p{
+  color:#bbb;
+  margin-bottom:35px;
+}
 
-  </style>
+/* FOOTER */
+
+footer{
+  padding:50px 8%;
+  text-align:center;
+}
+
+footer p{
+  color:#888;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+  .menu{
+    display:none;
+  }
+
+  .hero{
+    text-align:center;
+    padding:140px 6% 80px;
+  }
+
+  .hero-text h2{
+    font-size:38px;
+  }
+
+  .hero-text p{
+    font-size:16px;
+    margin:auto auto 30px auto;
+  }
+
+  .title h2{
+    font-size:32px;
+  }
+
+  .cta h2{
+    font-size:34px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .portfolio-media{
+    height:220px;
+  }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<!-- NAVBAR -->
 
-  <header>
-    <div class="navbar">
+<header>
 
-      <div class="logo">
-        <img src="mira__lablogobottom.png" alt="Mira Lab Logo">
-        <h1>Mira__Lab</h1>
-      </div>
+<div class="navbar">
 
-      <nav class="menu">
-        <a href="#inicio">Início</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#contato">Contato</a>
-      </nav>
+<div class="logo">
+<img src="mira__lablogobottom.png" alt="">
+<h1>Mira__Lab</h1>
+</div>
 
-      <a href="https://wa.me/558183920194" class="btn" target="_blank" class="btn">Solicitar Projeto</a>
+<nav class="menu">
 
-    </div>
-  </header>
+<a href="#inicio">Início</a>
+<a href="#servicos">Serviços</a>
+<a href="#portfolio">Portfólio</a>
+<a href="#clientes">Clientes</a>
+<a href="#contato">Contato</a>
 
-  <!-- HERO -->
+</nav>
 
-  <section class="hero" id="inicio">
+<a href="https://wa.me/558183920194" class="btn">
+Solicitar Projeto
+</a>
 
-    <div class="hero-text">
-      <h2>
-        Soluções em <span>Tecnologia</span><br>
-        Sites, Sistemas e Apps
-      </h2>
+</div>
 
-      <p>
-        Desenvolvimento de sistemas modernos, sites profissionais,
-        automações e soluções digitais para empresas e comerciantes.
-      </p>
+</header>
 
-      <a href="https://instagram.com/mira__lab" class="btn">instagram</a>
-    </div>
+<!-- HERO -->
 
-    <div class="hero-image">
-      <img src="mira__lablogoroxa.png" alt="Logo Mira Lab">
-    </div>
+<section class="hero" id="inicio">
 
-  </section>
+<div class="hero-text">
 
-  <!-- SERVIÇOS -->
+<h2>
+Soluções em <span>Tecnologia</span><br>
+Sites, Sistemas e Apps
+</h2>
 
-  <section id="servicos">
+<p>
+Desenvolvimento de sistemas modernos, sites profissionais,
+automações e soluções digitais para empresas e comerciantes.
+</p>
 
-    <div class="title">
-      <h2>Meus Serviços</h2>
-      <p>Soluções modernas para negócios e empresas</p>
-    </div>
+<a href="https://instagram.com/mira__lab" class="btn">
+Instagram
+</a>
 
-    <div class="cards">
+</div>
 
-      <div class="card">
-        <h3>💻 Desenvolvimento Web</h3>
-        <p>
-          Criação de sites modernos, rápidos, responsivos e otimizados.
-        </p>
-      </div>
+<div class="hero-image">
+<img src="mira__lablogoroxa.png" alt="">
+</div>
 
-      <div class="card">
-        <h3>⚡ Sistemas de Gestão</h3>
-        <p>
-          Sistemas para estoque, vendas, delivery, financeiro e empresas.
-        </p>
-      </div>
+</section>
 
-      <div class="card">
-        <h3>📱 Landing Pages</h3>
-        <p>
-          Páginas profissionais para captar clientes e aumentar vendas.
-        </p>
-      </div>
+<!-- SERVIÇOS -->
 
-      <div class="card">
-        <h3>🚀 Automação</h3>
-        <p>
-          Integrações, APIs e automações para otimizar processos.
-        </p>
-      </div>
+<section id="servicos">
 
-    </div>
+<div class="title">
 
-  </section>
+<h2>Meus Serviços</h2>
 
-  <!-- PORTFÓLIO -->
+<p>
+Soluções modernas para negócios e empresas
+</p>
 
-  <section id="portfolio">
+</div>
 
-    <div class="title">
-      <h2>Projetos & Sistemas</h2>
-    
-      <p>Sistemas, sites e soluções digitais desenvolvidas pela Mira__Lab</p>
-    </div>
+<div class="cards">
 
-    <div class="portfolio-grid">
+<div class="card">
+<h3>💻 Desenvolvimento Web</h3>
+<p>Criação de sites modernos, rápidos e responsivos.</p>
+</div>
 
-      <!-- CARD 1 -->
+<div class="card">
+<h3>⚡ Sistemas de Gestão</h3>
+<p>Sistemas para estoque, vendas, delivery e financeiro.</p>
+</div>
 
-      <div class="portfolio-card">
+<div class="card">
+<h3>📱 Landing Pages</h3>
+<p>Páginas profissionais focadas em conversão.</p>
+</div>
 
-        <div class="portfolio-media">
-          <!-- IMAGEM -->
-          <!-- Troque pelo caminho da imagem -->
-          <img src="Captura de tela de 2026-05-13 19-19-08.png" alt="Sistema">
-        </div>
+<div class="card">
+<h3>🚀 Automação</h3>
+<p>Integrações e automações para empresas.</p>
+</div>
 
-        <div class="portfolio-content">
-          <h3>Sistema Comercial</h3>
-          <p>
-            Sistema completo para gestão de estoque, vendas e financeiro.
-          </p>
+</div>
 
-          <a href="https://wa.me/558183920194" class="btn">entre em contato</a>
-        </div>
+</section>
 
-      </div>
+<!-- PORTFOLIO -->
 
-      <!-- CARD 2 -->
+<section id="portfolio">
 
-      <div class="portfolio-card">
+<div class="title">
 
-        <div class="portfolio-media">
-<iframe
+<h2>Projetos & Sistemas</h2>
+
+<p>
+Conheça alguns projetos desenvolvidos pela Mira__Lab
+</p>
+
+</div>
+
+<div class="portfolio-grid">
+
+<!-- SISTEMA COMERCIAL -->
+
+<div class="portfolio-card">
+
+<div class="portfolio-media">
+
+  <iframe
     width="100%"
-    height="500"
-    src="https://www.youtube.com/embed/msqD4IwVyLc"
+    height="100%"
+    src="https://www.youtube.com/embed/wpsv9bIT7sg"
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
+  </iframe>
+</div>
+
+<div class="portfolio-content">
+
+<h3>Sistema Comercial</h3>
+
+<p>
+Sistema completo para gestão empresarial.
+</p>
+
+<a href="https://wa.me/558183920194" class="btn">
+Entre em contato
+</a>
+
+</div>
+
+</div>
+
+<!-- SITE EMPRESARIAL -->
+
+<div class="portfolio-card">
+
+<div class="portfolio-media">
+<iframe
+  width="100%"
+  height="100%"
+  src="https://www.youtube.com/embed/fjh426ieVHg"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
 </iframe>
-       
+</div>
 
-        </div>
+<div class="portfolio-content">
 
-        <div class="portfolio-content">
-          <h3>Apresentação do Sistema</h3>
-          <p>
-            Demonstração em vídeo do funcionamento do sistema.
-          </p>
+<h3>Site Empresarial</h3>
 
-          <a href="https://wa.me/558183920194" class="btn">entre em contato</a>
-        </div>
+<p>
+Site moderno para empresas e negócios locais.
+</p>
 
-      </div>
+<a href="https://wa.me/558183920194" class="btn">
+Entre em contato
+</a>
 
-      <!-- CARD 3 -->
+</div>
 
-      <div class="portfolio-card">
+</div>
 
-        <div class="portfolio-media">
-          <img src="Captura de tela de 2026-05-13 19-27-30.png" alt="Site">
-        </div>
+<!-- DELIVERY -->
 
-        <div class="portfolio-content">
-          <h3>Site Empresarial</h3>
-          <p>
-            Layout moderno para empresas e negócios locais.
-          </p>
+<div class="portfolio-card">
 
-          <a href="https://wa.me/558183920194" class="btn" target="_blank">entre em contato</a>
-        </div>
+<div class="portfolio-media">
+  <iframe
+    width="100%"
+    height="100%"
+    src="https://www.youtube.com/embed/F5MLqN_giPg"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
 
-      </div>
+</div>
 
-    </div>
+<div class="portfolio-content">
 
-  </section>
+<h3>Sistema Delivery</h3>
 
-  <!-- CTA -->
+<p>
+Plataforma moderna para delivery online.
+</p>
 
-  <section class="cta" id="contato">
+<a href="https://wa.me/558183920194" class="btn">
+Entre em contato
+</a>
 
-    <h2>Vamos criar seu próximo projeto?</h2>
+</div>
 
-    <p>
-      Entre em contato e tenha um site ou sistema profissional.
-    </p>
+</div>
 
-    <a href="https://wa.me/558183920194" class="btn">
-      Chamar no WhatsApp
-    </a>
+<!-- LANDING PAGE -->
 
-  </section>
+<div class="portfolio-card">
 
-  <!-- FOOTER -->
+<div class="portfolio-media">
+<iframe
+  width="100%"
+  height="100%"
+  src="https://www.youtube.com/embed/SbNmqGBo6WA"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+</div>
 
-  <footer>
-    <p>
-      © 2026 Mira__Lab - Soluções em Tecnologia
-    </p>
-  </footer>
+<div class="portfolio-content">
 
-  <script>
+<h3>Landing Page Premium</h3>
 
-    // EFEITO HEADER
+<p>
+Página profissional focada em vendas e conversão.
+</p>
 
-    const header = document.querySelector("header");
+<a href="https://wa.me/558183920194" class="btn">
+Entre em contato
+</a>
 
-    window.addEventListener("scroll", () => {
+</div>
 
-      if(window.scrollY > 50){
-        header.style.background = "rgba(0,0,0,.85)";
-      } else {
-        header.style.background = "rgba(0,0,0,.5)";
-      }
+</div>
 
-    });
+<!-- DASHBOARD -->
 
-  </script>
+<div class="portfolio-card">
+
+<div class="portfolio-media">
+
+<
+
+  <iframe
+    width="100%"
+    height="100%"
+    src="https://www.youtube.com/embed/fjh426ieVHg"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+
+</div>
+
+<div class="portfolio-content">
+
+<h3>Dashboard Administrativo</h3>
+
+<p>
+Painel administrativo moderno e completo.
+</p>
+
+<a href="https://wa.me/558183920194" class="btn">
+Entre em contato
+</a>
+
+</div>
+
+</div>
+
+<!-- ERP -->
+
+<div class="portfolio-card">
+
+<div class="portfolio-media">
+
+<iframe
+src="https://www.youtube.com/embed/msqD4IwVyLc"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="portfolio-content">
+
+<h3>ERP Empresarial</h3>
+
+<p>
+Sistema ERP completo para empresas.
+</p>
+
+<a href="https://wa.me/558183920194" class="btn">
+Entre em contato
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CLIENTES -->
+
+<section class="comments" id="clientes">
+
+<div class="title">
+
+<h2>Comentários de Clientes</h2>
+
+<p>
+Veja o que nossos clientes falam
+</p>
+
+</div>
+
+<div class="comments-grid">
+
+<div class="comment-card">
+
+<div class="stars">★★★★★</div>
+
+<p>
+Sistema extremamente profissional e rápido.
+Melhorou totalmente nosso atendimento.
+</p>
+
+<h3>Marcos Oliveira</h3>
+
+</div>
+
+<div class="comment-card">
+
+<div class="stars">★★★★★</div>
+
+<p>
+Landing page moderna e muito bonita.
+Aumentou bastante nossas vendas.
+</p>
+
+<h3>Fernanda Lima</h3>
+
+</div>
+
+<div class="comment-card">
+
+<div class="stars">★★★★★</div>
+
+<p>
+Atendimento excelente e projeto entregue
+antes do prazo.
+</p>
+
+<h3>Carlos Henrique</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta" id="contato">
+
+<h2>
+Vamos criar seu próximo projeto?
+</h2>
+
+<p>
+Entre em contato e tenha um site ou sistema profissional.
+</p>
+
+<a href="https://wa.me/558183920194" class="btn">
+Chamar no WhatsApp
+</a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Mira__Lab - Soluções em Tecnologia
+</p>
+
+</footer>
+
+<script>
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+if(window.scrollY > 50){
+header.style.background = "rgba(0,0,0,.85)";
+}else{
+header.style.background = "rgba(0,0,0,.5)";
+}
+
+});
+
+</script>
 
 </body>
 </html>
